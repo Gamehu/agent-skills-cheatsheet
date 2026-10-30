@@ -1,6 +1,6 @@
 # Agent Skills Cheatsheet
 
-> Version v0.4 · Data as of 2026-10-30 · Covers 22 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
+> Version v0.5 · Data as of 2026-10-30 · Covers 22 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
 
 ## How to read an entry
 
@@ -31,7 +31,7 @@ Skills written by this cheatsheet's maintainer, Gamehu — listed separately fro
 | Skill | What it does | Form | Works with | License | Stars (snapshot) | First collected |
 |---|---|---|---|---|---|---|
 | [Gamehu/wechat-mp-skill](https://github.com/Gamehu/wechat-mp-skill) | A WeChat Official Account publishing skill: converts Markdown into WeChat-compatible HTML and creates/manages articles in the account's draft box through the WeChat API, with the token-cache and dynamic-IP whitelist failure modes (errors 40164 / 40001) documented from daily production use — it formats the maintainer's three daily briefings for WeChat | Single skill | SKILL.md-based agents | No LICENSE file in repo | 0 (2026-10-30) | 2026-10-30 (in production use since 2026-09-28) |
-| [Gamehu/reins](https://github.com/Gamehu/reins-en) | Three skills that keep a coding agent on the plan you approved: `spike-design` turns a requirement into a reviewable, code-free plan — goals and non-goals, a structure skeleton, and an abstraction/dependency budget that defaults to zero — cut into ~300-line slices with numbered decisions; `risk-walkthrough` then walks only the hard parts of each slice and labels every deviation "needs your decision" or "already in the plan"; `quality-review` re-checks plan vs code in a fresh context and reports without ever editing. No runtime, nothing to install. (English edition linked; a Chinese edition lives at Gamehu/reins, still private.) | Collection (3 skills) | Claude Code, Codex, OpenCode | MIT | 0 (2026-10-30) | 2026-10-30 |
+| [Gamehu/reins](https://github.com/Gamehu/reins-en) | Three skills that keep a coding agent on the plan you approved: `spike-design` turns a requirement into a reviewable, code-free plan — goals and non-goals, a structure skeleton, and an abstraction/dependency budget that defaults to zero — cut into ~300-line slices with numbered decisions; `risk-walkthrough` then walks only the hard parts of each slice and labels every deviation "needs your decision" or "already in the plan"; `quality-review` re-checks plan vs code in a fresh context and reports without ever editing. No runtime, nothing to install. (English edition linked; a Chinese edition lives at Gamehu/reins.) | Collection (3 skills) | Claude Code, Codex, OpenCode | MIT | 0 (2026-10-30) | 2026-10-30 |
 
 ## 🔐 Security & auditing
 
@@ -115,6 +115,7 @@ Don't want to hand-write SKILL.md files? These tools generate skills from softwa
 
 ## Changelog
 
+- **v0.5 (2026-10-30)** — Gamehu/reins (the Chinese edition) also went public; both reins repos are now open.
 - **v0.4 (2026-10-30)** — Gamehu/reins-en went public (maintainer flipped the repo's visibility), so the reins entry no longer carries a "private repo" note; the Chinese edition (Gamehu/reins) remains private for now.
 - **v0.3 (2026-10-30)** — Maintainer's own skills corrected at the maintainer's direction: added Gamehu/reins (three plan-first coding skills — spike-design, risk-walkthrough, quality-review; MIT verified via GitHub API; repo currently private) and removed Gamehu/skill-trace, which is a dashboard tool, not a skill. Coverage stays 22 entries.
 - **v0.2 (2026-10-30)** — Added a separate 🧑‍💻 Maintainer's own skills category at the maintainer's request: Gamehu/wechat-mp-skill (WeChat Official Account draft publishing, license verified: no LICENSE file in repo) and Gamehu/skill-trace (MIT, license verified via GitHub API). Coverage 20 → 22 entries, categories 7 → 8.
