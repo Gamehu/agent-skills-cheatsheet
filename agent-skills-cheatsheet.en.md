@@ -1,6 +1,6 @@
 # Agent Skills Cheatsheet
 
-> Version v0.2 · Data as of 2026-10-30 · Covers 22 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
+> Version v0.3 · Data as of 2026-10-30 · Covers 22 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
 
 ## How to read an entry
 
@@ -26,12 +26,12 @@ Every entry answers five questions in plain language:
 
 ## 🧑‍💻 Maintainer's own skills
 
-Skills (and one companion tool) written by this cheatsheet's maintainer, Gamehu — listed separately from the collected entries above, and held to the same entry standard.
+Skills written by this cheatsheet's maintainer, Gamehu — listed separately from the collected entries below, and held to the same entry standard.
 
 | Skill | What it does | Form | Works with | License | Stars (snapshot) | First collected |
 |---|---|---|---|---|---|---|
 | [Gamehu/wechat-mp-skill](https://github.com/Gamehu/wechat-mp-skill) | A WeChat Official Account publishing skill: converts Markdown into WeChat-compatible HTML and creates/manages articles in the account's draft box through the WeChat API, with the token-cache and dynamic-IP whitelist failure modes (errors 40164 / 40001) documented from daily production use — it formats the maintainer's three daily briefings for WeChat | Single skill | SKILL.md-based agents | No LICENSE file in repo | 0 (2026-10-30) | 2026-10-30 (in production use since 2026-09-28) |
-| [Gamehu/skill-trace](https://github.com/Gamehu/skill-trace) | A local, read-only dashboard that replays what your coding agent's skills actually did — the questions asked, the mid-run decisions you made (plans approved or sent back, operations rejected, interruptions), and the final delivery (reply + file diff) — on a timeline, with per-skill usage stats; it only reads session logs already on disk, installs nothing into the agent, and makes no network calls | Companion tool (not itself a skill) | Claude Code, Codex, OpenCode | MIT | 0 (2026-10-30) | 2026-10-30 |
+| [Gamehu/reins](https://github.com/Gamehu/reins-en) | Three skills that keep a coding agent on the plan you approved: `spike-design` turns a requirement into a reviewable, code-free plan — goals and non-goals, a structure skeleton, and an abstraction/dependency budget that defaults to zero — cut into ~300-line slices with numbered decisions; `risk-walkthrough` then walks only the hard parts of each slice and labels every deviation "needs your decision" or "already in the plan"; `quality-review` re-checks plan vs code in a fresh context and reports without ever editing. No runtime, nothing to install (repo currently private; English edition linked, Chinese edition at Gamehu/reins) | Collection (3 skills) | Claude Code, Codex, OpenCode | MIT | 0 (2026-10-30) | 2026-10-30 |
 
 ## 🔐 Security & auditing
 
@@ -115,5 +115,6 @@ Don't want to hand-write SKILL.md files? These tools generate skills from softwa
 
 ## Changelog
 
+- **v0.3 (2026-10-30)** — Maintainer's own skills corrected at the maintainer's direction: added Gamehu/reins (three plan-first coding skills — spike-design, risk-walkthrough, quality-review; MIT verified via GitHub API; repo currently private) and removed Gamehu/skill-trace, which is a dashboard tool, not a skill. Coverage stays 22 entries.
 - **v0.2 (2026-10-30)** — Added a separate 🧑‍💻 Maintainer's own skills category at the maintainer's request: Gamehu/wechat-mp-skill (WeChat Official Account draft publishing, license verified: no LICENSE file in repo) and Gamehu/skill-trace (MIT, license verified via GitHub API). Coverage 20 → 22 entries, categories 7 → 8.
 - **v0.1 (2026-10-30)** — Initial release: 20 entries across 7 categories (Security & auditing 3, Design & UI 5, Coding practice 2, Research & knowledge 2, Official & platform collections 4, Harness & frameworks 2, Skill creation & tooling 2), seeded from skills collected in daily tech-briefing research between 2026-10-21 and 2026-10-30, plus a 2-item watchlist and ecosystem notes.
