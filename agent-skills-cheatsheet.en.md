@@ -1,6 +1,6 @@
 # Agent Skills Cheatsheet
 
-> Version v0.5 · Data as of 2026-10-30 · Covers 22 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
+> Version v0.6 · Data as of 2026-10-30 · Covers 23 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
 
 ## How to read an entry
 
@@ -18,7 +18,7 @@ Every entry answers five questions in plain language:
 |---|---|---|---|
 | Audit code your agent wrote | cloudflare/security-audit-skill | Six-stage audit with finder/verifier separation; built to kill false positives | NVIDIA/SkillSpector (scan the skill itself), SkillzBench (pre-scanned directory) |
 | Your agent's UI looks like generic AI slop | Nutlope/hallmark | Purpose-built anti-slop design skill for the major coding agents | pbakaus/impeccable (design vocabulary + deterministic checks), Leonxlnx/taste-skill |
-| Make the agent write less, better code | DietrichGebert/ponytail | "Lazy senior engineer" style skill with measured code/time reductions | multica-ai/andrej-karpathy-skills (Karpathy's practices as one CLAUDE.md) |
+| Make the agent write less, better code | DietrichGebert/ponytail | "Lazy senior engineer" style skill with measured code/time reductions | multica-ai/andrej-karpathy-skills (Karpathy's practices as one CLAUDE.md), mattpocock/skills (composable engineering-practice skills) |
 | Scientific research with an agent | K-Dense-AI/scientific-agent-skills | 177 ready-made research skills + 100+ scientific databases | Graphify-Labs/graphify (turn your codebase into a queryable graph first) |
 | Give non-coding roles their own agent setup | anthropics/knowledge-work-plugins | Anthropic's official role-based plugin templates (sales, legal, finance…) | cursor/plugins (Cursor's official catalog) |
 | Turn a desktop app into something an agent can drive | HKUDS/CLI-Anything | Auto-generates a CLI harness + SKILL.md for arbitrary software | Microsoft Skill Recorder (capture a human doing it once) |
@@ -39,7 +39,7 @@ Skills that audit agent output, and tooling that audits the skills themselves �
 
 | Skill | What it does | Form | Works with | License | Stars (snapshot) | First collected |
 |---|---|---|---|---|---|---|
-| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | Turns a coding agent into a security auditor that works in six stages (recon → coverage-guided hunting → adversarial verification → structured output → independent re-check → neutral report), with finder and verifier kept separate so findings arrive with a full source trace instead of false-positive noise; Cloudflare runs it continuously over its own repos | Single skill | Coding agents (Claude Code class) | MIT | 48,529 (2026-10-27) | 2026-10-21 |
+| [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | Turns a coding agent into a security auditor that works in six stages (recon → coverage-guided hunting → adversarial verification → structured output → independent re-check → neutral report), with finder and verifier kept separate so findings arrive with a full source trace instead of false-positive noise; Cloudflare runs it continuously over its own repos | Single skill | Coding agents (Claude Code class) | MIT | 52,942 (2026-10-30) | 2026-10-21 |
 | [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) | Scans an agent skill *before you install it* for vulnerabilities, malicious patterns, prompt injection, data exfiltration and supply-chain risk — the pre-flight check for third-party SKILL.md files | Scanner | Claude Code, Codex, MCP skills | see repo | 22,164 (2026-10-27) | 2026-10-27 |
 | [SkillzBench](https://signalnewsharrisonburg.com/press-releases/80473/skillzbench-launches-free-directory-that-security-scans-and-benchmarks-ai-agent-skills-before-agents-use-them/) | A free directory that security-scans every listed skill, benchmarks it with an A/B test (same model, with vs. without the skill, publishing the score delta — including negative ones), and serves your hand-picked set to your agent through an MCP connector | Directory + benchmark | Any agent via MCP | n/a (service) | n/a | 2026-10-26 |
 
@@ -49,11 +49,11 @@ Design skills exist because agent-generated interfaces converged on one generic 
 
 | Skill | What it does | Form | Works with | License | Stars (snapshot) | First collected |
 |---|---|---|---|---|---|---|
-| [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | An anti-"AI-slop" design skill: explicit rules and references that push a coding agent's front-end output away from the default gradient-and-glass look toward deliberate, product-specific design | Single skill | Claude Code, Cursor, Codex | see repo | 36,254 (2026-10-27) | 2026-10-25 |
-| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Gives a coding agent a shared design language: one `/impeccable init` writes the product facts into PRODUCT.md, 24 shared commands cover shaping, critique, polish and motion, and 61 deterministic checks run in the CLI or a browser extension without calling a model | Skill + command set | Coding agents (harness-level) | see repo | 89,159 (2026-10-27) | 2026-10-27 |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | A ten-stage design-taste workflow for agents, gated by real-browser verification tests, so "looks right" is checked in an actual browser instead of asserted by the model | Single skill (workflow) | Coding agents | see repo | ~104,000 (2026-10-30) | 2026-10-30 |
+| [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | An anti-"AI-slop" design skill: explicit rules and references that push a coding agent's front-end output away from the default gradient-and-glass look toward deliberate, product-specific design | Single skill | Claude Code, Cursor, Codex | MIT | 42,162 (2026-10-30) | 2026-10-25 |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Gives a coding agent a shared design language: one `/impeccable init` writes the product facts into PRODUCT.md, 24 shared commands cover shaping, critique, polish and motion, and 61 deterministic checks run in the CLI or a browser extension without calling a model | Skill + command set | Coding agents (harness-level) | Apache-2.0 | 95,530 (2026-10-30) | 2026-10-27 |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | A ten-stage design-taste workflow for agents, gated by real-browser verification tests, so "looks right" is checked in an actual browser instead of asserted by the model | Single skill (workflow) | Coding agents | MIT | 105,615 (2026-10-30) | 2026-10-30 |
 | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design) | An HTML-native design skill that returns deliverable design work from one prompt inside the agent — web/app prototypes, editable PPTX decks, animation and infographics — instead of a static mockup image | Single skill | Coding agents | see repo | 26,723 (2026-10-27) | 2026-10-27 |
-| [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) | A design-skills pack for agents (surfaced on GitHub's daily trending chart); exact scope unverified — listed so the daily sync can verify and expand it | Collection | Coding agents | see repo | unverified | 2026-10-29 |
+| [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) | A growing collection of self-contained design skills for AI coding tools (starting with a landing-page skill covering intake questions, page structure, conversion copy and a full visual system), each installed as one folder the agent reads as a markdown rules file | Collection | Claude Code, Cursor, Codex, Windsurf, markdown-rules readers | MIT | 12,255 (2026-10-30) | 2026-10-29 |
 
 ## 💻 Coding practice
 
@@ -63,6 +63,7 @@ Skills that change *how* the agent writes code — engineering judgment, house s
 |---|---|---|---|---|---|---|
 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | A "lazy senior engineer" persona skill that makes the agent write less code and verify more: measured on 39 tasks at −53% code volume, −41% time, with tests on 98% of high-risk logic; v5.3 adds a live cost/time/token band on top of Claude Code plus a local task board | Single skill | Claude Code | see repo | 169,603 (2026-10-21) | 2026-10-21 |
 | [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) | Distills Andrej Karpathy's public observations on LLM coding pitfalls into a single CLAUDE.md skill file, so the agent inherits a well-known engineer's working rules without you writing them | Single skill (CLAUDE.md) | Claude Code | see repo | +3,286 in one week (2026-10-28) | 2026-10-26 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | A collection of small, composable engineering-practice skills — requirements interviews, TDD red-green-refactor loops, systematic debugging, code review against the originating spec — that steer a coding agent without imposing an end-to-end process framework | Collection | Claude Code, Codex, GitHub Copilot, Gemini CLI | MIT | 306,678 (2026-10-30) | 2026-10-30 |
 
 ## 🔬 Research & knowledge
 
@@ -91,7 +92,7 @@ Systems that sit one level above individual skills: organizing, tuning and orche
 | Skill | What it does | Form | Works with | License | Stars (snapshot) | First collected |
 |---|---|---|---|---|---|---|
 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | A harness performance-optimization system spanning skills, instincts, memory, security and research-first development — treating the harness itself (not the model) as the thing you tune | Framework / harness system | Claude Code, Codex, OpenCode, Cursor | see repo | 289,819 (2026-10-27) | 2026-10-27 |
-| [obra/superpowers](https://github.com/obra/superpowers) | An agent skills framework: a structured library of composable skills plus the methodology for invoking them, surfaced repeatedly on GitHub trending through October 2026; exact current scope to be re-verified by the daily sync | Framework | Coding agents | see repo | unverified | 2026-10-29 |
+| [obra/superpowers](https://github.com/obra/superpowers) | An agentic skills framework and software development methodology: a structured library of composable skills that guides a coding agent through a full development process, from clarifying requirements and planning to test-driven implementation and review | Framework | Coding agents | MIT | 308,649 (2026-10-30) | 2026-10-29 |
 
 ## 🛠️ Skill creation & tooling
 
@@ -115,6 +116,7 @@ Don't want to hand-write SKILL.md files? These tools generate skills from softwa
 
 ## Changelog
 
+- **v0.6 (2026-10-30)** — Added mattpocock/skills (composable engineering-practice skills, MIT, 306,678 stars, verified via GitHub API + README) to 💻 Coding practice, from the 2026-10-30 briefing's weekly rising list (+7.4k stars). Verified licenses and refreshed star snapshots for five existing entries: hallmark (MIT, 42,162), taste-skill (MIT, 105,615), impeccable (Apache-2.0, 95,530), elayadesign/ai-design-skills (MIT, 12,255; scope now verified from its README) and superpowers (MIT, 308,649); security-audit-skill refreshed to 52,942. Coverage 22 → 23 entries.
 - **v0.5 (2026-10-30)** — Gamehu/reins (the Chinese edition) also went public; both reins repos are now open.
 - **v0.4 (2026-10-30)** — Gamehu/reins-en went public (maintainer flipped the repo's visibility), so the reins entry no longer carries a "private repo" note; the Chinese edition (Gamehu/reins) remains private for now.
 - **v0.3 (2026-10-30)** — Maintainer's own skills corrected at the maintainer's direction: added Gamehu/reins (three plan-first coding skills — spike-design, risk-walkthrough, quality-review; MIT verified via GitHub API; repo currently private) and removed Gamehu/skill-trace, which is a dashboard tool, not a skill. Coverage stays 22 entries.
