@@ -21,6 +21,7 @@ Every entry must have:
 
 ## Categories (fixed taxonomy; propose changes to Hu before adding a new one)
 
+0. 🧑‍💻 Maintainer's own skills — Gamehu's own skills and skill-ecosystem tooling ONLY (currently wechat-mp-skill and skill-trace). Nothing collected from third parties goes here, and the maintainer's projects do not get duplicated into the other categories.
 1. 🔐 Security & auditing — auditing agent output; scanning/auditing skills themselves; benchmarked directories.
 2. 🎨 Design & UI — design vocabularies, processes, anti-slop skills.
 3. 💻 Coding practice — engineering style/methodology skills that change how code gets written.

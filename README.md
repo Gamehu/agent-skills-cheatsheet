@@ -1,6 +1,6 @@
 # Agent Skills Cheatsheet
 
-> Version v0.1 · Data as of 2026-10-30 · Covers 20 skill projects with verifiable sources
+> Version v0.2 · Data as of 2026-10-30 · Covers 22 entries with verifiable sources
 
 A daily-updated, evidence-annotated guide to **agent skills** — the SKILL.md packages, plugin collections, frameworks, scanners and creation tools that extend coding agents such as Claude Code, Codex, Cursor, OpenCode and Gemini CLI.
 
@@ -12,6 +12,7 @@ Agent skills are becoming infrastructure: in October 2026 the GitHub trending ch
 
 1. **Start with Quick picks by scenario** — the fastest path: name your job (audit agent-written code, de-slop AI design, do domain research, build your own skill…) and get a first choice plus backups.
 2. **Drill into a category** — skills are classified by what they are *for*, not by who published them:
+   - 🧑‍💻 Maintainer's own skills — Gamehu's own skills and skill tooling, kept in a separate category of their own
    - 🔐 Security & auditing — auditing agent-written code, scanning skills before install, benchmarked directories
    - 🎨 Design & UI — design vocabularies and anti-"AI-slop" skills for coding agents
    - 💻 Coding practice — engineering-style and methodology skills that change how an agent writes code
