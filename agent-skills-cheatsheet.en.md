@@ -1,6 +1,6 @@
 # Agent Skills Cheatsheet
 
-> Version v0.9 · Data as of 2026-11-02 · Covers 31 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
+> Version v1.0 · Data as of 2026-11-03 · Covers 33 entries · Daily-updated guide to agent skills for Claude Code, Codex, Cursor, OpenCode, Gemini CLI and other coding agents
 
 ## How to read an entry
 
@@ -25,6 +25,7 @@ Every entry answers five questions in plain language:
 | Organize / tune many skills at once | affaan-m/ECC | Harness performance system spanning skills, memory, security | obra/superpowers (agent skills framework) |
 | Remember context across agent sessions | thedotmack/claude-mem | Captures session behavior, compresses it with AI, injects it back next session | — |
 | Cut coding-agent cost without switching models | microsoft/TokenEconomizer | Repository micro-skills + tool pruning + failure-loop intervention, measured −18.4% to −30.9% cost | — |
+| Reverse-engineer an app without its source code | morluto/rea | MCP tool set + workflow instructions inspect binaries, JS/Electron apps, .NET assemblies and websites locally, with evidence and limits per finding | — |
 
 ## 🧑‍💻 Maintainer's own skills
 
@@ -79,6 +80,7 @@ Domain knowledge, packaged for agents — deep skill packs for a field, and tool
 |---|---|---|---|---|---|---|
 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 177 ready-to-use scientific-research skills (biology, chemistry, medicine, drug discovery) wired to 100+ scientific databases, so a general agent can run domain workflows it was never trained for | Collection (177 skills) | Cursor, Claude Code, Codex; open Agent Skills standard | see repo | 53,576 (2026-10-22) | 2026-10-22 |
 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | Converts a whole codebase — code, docs, SQL schemas, PDFs — into a queryable knowledge graph exposed as a `/graphify` skill; parsing is local and deterministic (AST-based, every edge explainable), no vector database involved | Skill + graph builder | Claude Code, Cursor, Codex, Gemini CLI | see repo | ~133,761 (2026-10-26) | 2026-10-24 |
+| [morluto/rea](https://github.com/morluto/rea) | Reverse-engineers an app without its source code: an MCP tool set plus agent workflow instructions inspect native binaries, JavaScript/Electron apps, .NET assemblies and websites locally, and report each finding with its evidence and limitations | Plugin + MCP tool set | Claude Code, Codex (plugins); any MCP-capable agent | MIT | 423,279 (2026-11-03) | 2026-11-03 |
 
 ## 🏛️ Official & platform collections
 
@@ -101,7 +103,8 @@ Systems that sit one level above individual skills: organizing, tuning and orche
 |---|---|---|---|---|---|---|
 | [affaan-m/ECC](https://github.com/affaan-m/ECC) | A harness performance-optimization system spanning skills, instincts, memory, security and research-first development — treating the harness itself (not the model) as the thing you tune | Framework / harness system | Claude Code, Codex, OpenCode, Cursor | MIT | 294,866 (2026-11-02) | 2026-10-27 |
 | [obra/superpowers](https://github.com/obra/superpowers) | An agentic skills framework and software development methodology: a structured library of composable skills that guides a coding agent through a full development process, from clarifying requirements and planning to test-driven implementation and review | Framework | Coding agents | MIT | 310,683 (2026-11-02) | 2026-10-29 |
-| [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | Gives every agent session a persistent memory: it captures what the agent does during a session, compresses it with AI, and injects the relevant context back into future sessions, so a new session no longer starts by re-explaining the project | Plugin (memory system) | Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode | Apache-2.0 | 109,448 (2026-11-02) | 2026-11-02 |
+| [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | Gives every agent session a persistent memory: it captures what the agent does during a session, compresses it with AI, and injects the relevant context back into future sessions, so a new session no longer starts by re-explaining the project | Plugin (memory system) | Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode | Apache-2.0 | 110,830 (2026-11-03) | 2026-11-02 |
+| [ruvnet/metaharness](https://github.com/ruvnet/metaharness) | Scaffolds a branded, ownable agent harness from any repo — its own npx CLI, MCP server, scoped memory, learning loop and witness-signed releases — instead of hand-wiring harness pieces together | Framework / harness generator | Claude Code, Codex, pi.dev, Hermes, OpenClaw, RVM | MIT | 737 (2026-11-03) | 2026-11-03 |
 | [microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer) | Cuts coding-agent cost without changing the model or the agent: it carries repository micro-skills across sessions (e.g. the correct test command), prunes tool definitions the repo never uses, and intervenes when the agent repeats the same failure — measured at −18.4% to −30.9% mean cost on SWE-Bench tasks | Plugin (cost control) | Claude Code, Codex, GitHub Copilot CLI, Pi | Apache-2.0 | 3,995 (2026-11-02) | 2026-11-02 |
 
 ## 🛠️ Skill creation & tooling
@@ -126,6 +129,7 @@ Don't want to hand-write SKILL.md files? These tools generate skills from softwa
 
 ## Changelog
 
+- **v1.0 (2026-11-03)** — Added 2 entries, both verified via GitHub API + README: morluto/rea (reverse-engineering plugin + MCP tool set for binaries, JS/Electron apps, .NET assemblies and websites, local analysis with evidence and limits per finding; MIT, 423,279 stars) to 🔬 Research & knowledge, with a new Quick-pick row; ruvnet/metaharness (scaffolds a branded agent harness with its own CLI, MCP server, memory, learning loop and witness-signed releases; MIT, 737 stars) to 🧰 Harness & frameworks. Refreshed star snapshot via GitHub API: thedotmack/claude-mem 109,448 → 110,830. Coverage 31 → 33 entries.
 - **v0.9 (2026-11-02)** — Added 3 entries, all verified via GitHub API + README: thedotmack/claude-mem (cross-session persistent-memory plugin, Apache-2.0, 109,448 stars) and microsoft/TokenEconomizer (cost-control plugin via repository micro-skills, tool pruning and failure-loop intervention, Apache-2.0, 3,995 stars) to 🧰 Harness & frameworks; anthropics/skills (Anthropic's public Agent Skills repo: example skills + spec + template, 186,405 stars) to 🏛️ Official & platform collections. Added two Quick-pick rows (remember context across sessions; cut agent cost without switching models). Refreshed star snapshots (all via GitHub API): mattpocock/skills 306,678 → 309,319, impeccable 98,367 → 99,448, superpowers 310,103 → 310,683, ECC 289,819 → 294,866 (license now confirmed MIT, was "see repo"). Coverage 28 → 31 entries.
 - **v0.8 (2026-11-01)** — Added 1 entry, verified via GitHub API + README + LICENSE: Motionsites-AI/claude-skill (cinematic landing-page skill with reference designs, media shelf, spec template and screenshot look-and-fix loop; skill code MIT, examples/media © MotionSites, 1,299 stars) to 🎨 Design & UI; added it as a Quick-pick backup for the anti-slop scenario. Refreshed star snapshots (all via GitHub API, licenses re-confirmed): security-audit-skill 52,942 → 55,407, hallmark 42,162 → 43,986 (briefing's 42,435 figure superseded by the API count), superpowers 309,480 → 310,103, impeccable 97,163 → 98,367, unslop 1,383 → 3,598, mcode-stack 464 → 484, lever 230 → 240. Coverage 27 → 28 entries.
 - **v0.7 (2026-10-31)** — Added 4 entries, all verified via GitHub API + README: heydamir/unslop (anti-slop audit-then-redline skill, CC BY 4.0, 1,383 stars) to 🎨 Design & UI; t3dotgg/tstack (9 PR-workflow skills, MIT, 2,473 stars) and github/lever (GitHub's official Copilot feedback-loop plugin, MIT, 230 stars) to 💻 Coding practice; MiniMax-AI/mcode-stack (MiniMax Code team's own skill stacks, MIT, 464 stars) to 🏛️ Official & platform collections. Refreshed star snapshots from the 2026-10-31 briefing's trending pair: superpowers 308,649 → 309,480, impeccable 95,530 → 97,163. Coverage 23 → 27 entries.
