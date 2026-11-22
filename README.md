@@ -1,6 +1,6 @@
 # Agent Skills Cheatsheet
 
-> Version v2.9 · Data as of 2026-11-21 · Covers 79 entries with verifiable sources
+> Version v3.0 · Data as of 2026-11-22 · Covers 91 entries with verifiable sources
 
 A daily-updated, evidence-annotated guide to **agent skills** — the SKILL.md packages, plugin collections, frameworks, scanners and creation tools that extend coding agents such as Claude Code, Codex, Cursor, OpenCode and Gemini CLI.
 
@@ -36,4 +36,4 @@ The cheatsheet text is published under **CC BY 4.0** — share and adapt freely 
 
 ---
 
-*Maintained daily. Last sync: 2026-11-21.*
+*Maintained daily. Last sync: 2026-11-22.*
